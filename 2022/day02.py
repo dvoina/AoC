@@ -1,38 +1,22 @@
 #Rock, Paper, Scissors
-scores = {'X':1, 'Y':2, 'Z':3}
+s1 = {
+    'X':{'A':4, 'B':1, 'C':7},
+    'Y':{'A':8, 'B':5, 'C':2},
+    'Z':{'A':3, 'B':9, 'C':6}
+}
 
-wins = { 'A':'Y', 'B':'Z', 'C':'X'}
-draws = {'A':'X', 'B':'Y', 'C':'Z'}
-loses = {'A':'Z', 'B':'X', 'C':'Y'}
 
-encryptedBook = [tuple(l.strip().split(" ")) for l in open("day02.txt").readlines()]
+s2 = {
+    'X':{'A':3, 'B':1, 'C':2},
+    'Y':{'A':4, 'B':5, 'C':6},
+    'Z':{'A':8, 'B':9, 'C':7}
+}
 
-#encryptedBook = [('A', 'Y'), ('B', 'X'), ('C', 'Z')]
+encryptedBook = [tuple(l.strip().split(" ")) for l in open("2022/day02.txt").readlines()]
 
-#part 1
-total = 0
+t1 = 0 
+t2 = 0
 for game in encryptedBook:
-    score = 0
-    if game[1] == wins[game[0]]:
-        score = 6
-    if game[1] == draws[game[0]]:
-        score = 3
-    score += scores[game[1]]
-    total += score
-print(total)
-
-#part 2
-total = 0
-for game in encryptedBook:
-    score = 0
-    if game[1] == 'X':
-        c = loses[game[0]]
-    if game[1] == 'Y':
-        score += 3
-        c = draws[game[0]]
-    if game[1] == 'Z':
-        score += 6
-        c = wins[game[0]]
-    score += scores[c] 
-    total += score
-print(total)
+    t1 += s1[game[1]][game[0]]
+    t2 += s2[game[1]][game[0]]
+print(t1, t2)
