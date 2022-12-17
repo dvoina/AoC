@@ -5,3 +5,4 @@ I have taken it more seriously in 2019.
 
 Here are my solutions, Python mostly.
 
+https://www.youtube.com/watch?v=CFWuwNDOnIo
