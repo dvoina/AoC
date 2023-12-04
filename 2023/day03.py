@@ -18,7 +18,6 @@ for l in data:
 
 N = len(data)-1
 M = len(data[0])-1
-print(data)
 
 numbers = []
 validNumbers = set()
@@ -42,8 +41,6 @@ for i, line in enumerate(data):
                 l = 0
                 isDigit = False
         j += 1
-print(numbers)
-
 
 dd = defaultdict(set)                    
 for number in numbers:
@@ -59,6 +56,7 @@ for number in numbers:
             validNumbers.add(v)
 
 print(sum(validNumbers))
+
 s = 0
 for k,v in dd.items():
     if len(v)==2:
