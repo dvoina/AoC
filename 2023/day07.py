@@ -63,6 +63,7 @@ class HandV2(Hand):
         jokers = d.pop("*", 0)
         if jokers == 5:
             cc = [0]
+            return HANDS[6]
         else:
             cc = sorted(d.values())
             cc[-1] += jokers
